@@ -1,7 +1,7 @@
 from owlready2 import *
 
 
-onto = get_ontology("file:///home/vdochev/uni/PMZ2022/PMZ2022/movie_onto_2.owl").load()
+onto = get_ontology("file://movie_onto.owl").load()
 with onto:
     class MotionPicture(Thing): pass
     class Person(Thing): pass
