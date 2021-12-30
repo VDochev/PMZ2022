@@ -115,9 +115,13 @@ with onto:
     print("{} is played by {}".format(the_dark_knight, the_dark_knight.played_by))
     print("{} acted in {}".format(Christian_Bale, Christian_Bale.acted_in))
     print("{} awarded to {}".format(oscar, oscar.awarded_to))
+
+    print("\nSynchronization of the reasoner...")
     sync_reasoner()
+    print()
 
 #print(list(default_world.inconsistent_classes()))
 print(onto.get_parents_of(Christian_Bale))
 print(onto.get_parents_of(the_dark_knight_soundtrack))
 print(onto.GoodMovie.is_a)
+onto.save(file = "result.rdfxml", format = "rdfxml")
