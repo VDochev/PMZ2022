@@ -92,7 +92,7 @@ with onto:
     buf = VFXCompany("BUF")
     Warner = Studio("Warner Bros.")
     
-    the_dark_knight_soundtrack = Soundtrack("The Dark Knight")
+    the_dark_knight_soundtrack = Soundtrack("The Dark Knight Soundtrack")
     the_dark_knight_soundtrack.recorded_by = [Hans_Zimmer]
     the_dark_knight.directed_by = [Christopher_Nolan]
     the_dark_knight.written_by = [Jonathan_Nolan]
@@ -102,7 +102,7 @@ with onto:
     the_dark_knight.played_by = [Christian_Bale, Heath_Ledger, Michael_Caine]
     the_dark_knight.is_awarded = [oscar, bafta, empire_award]
 
-    the_prestige_soundtrack = Soundtrack("The Prestige")
+    the_prestige_soundtrack = Soundtrack("The Prestige Soundtrack")
     the_prestige_soundtrack.recorded_by = [David_Julyan]
     the_prestige.directed_by = [Christopher_Nolan]
     the_prestige.written_by = [Jonathan_Nolan]
