@@ -124,4 +124,31 @@ with onto:
 print(onto.get_parents_of(Christian_Bale))
 print(onto.get_parents_of(the_dark_knight_soundtrack))
 print(onto.GoodMovie.is_a)
+
+n_classes = list(default_world.sparql("""SELECT (COUNT(?x) AS ?nb) { ?x a owl:Class . } """))
+print("Number of classes: {}".format(n_classes))
+
+actors_and_movies = list(default_world.sparql("""
+    PREFIX  ns:  <file:///home/vdochev/uni/PMZ2022/movie_onto.owl#>
+    SELECT ?movie ?actor
+    WHERE { 
+        ?movie ns:played_by ?actor .
+    }"""))
+
+for pair in actors_and_movies:
+    print(pair)
+
+print()
+actors_by_director = list(default_world.sparql("""
+    PREFIX ns:  <file:///home/vdochev/uni/PMZ2022/movie_onto.owl#>
+    SELECT ?actor 
+    WHERE { 
+        ?x ns:played_by ?actor .
+        ?x ns:directed_by ?y
+        FILTER (str(?y) = "file:///home/vdochev/uni/PMZ2022/movie_onto.owl#Christopher Nolan") .
+    }"""))
+
+for actor in actors_by_director:
+    print(actor)
+    
 onto.save(file = "result.rdfxml", format = "rdfxml")
